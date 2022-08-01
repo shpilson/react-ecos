@@ -1,0 +1,183 @@
+@use "sass:math";
+
+// mixin
+//Percent
+// @function percent($px, $from) {
+//   $result: math.div($px, $from) * 100%;
+//   @return $result;
+// }
+
+//REM
+@function rem($px) {
+  $result: ($px / 16) + rem;
+  @return $result;
+}
+
+//EM
+// @function em($px, $current: 16) {
+//   $result: math.div($px, $current) + em;
+//   @return $result;
+// }
+
+// Grids
+@mixin grid($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
+}
+
+// Адаптивная формула для текста в Rem
+$maxWidth: 1440;
+@mixin adaptiv-font($min: 16, $maxF: 20, $minWidth: 320) {
+  $minF: $min / 16;
+  font-size: calc(
+    #{$minF + rem} + (#{$maxF} - #{$minF * 16}) * ((100vw - #{$minWidth + px}) /
+          (#{$maxWidth} - #{$minWidth}))
+  );
+}
+
+// Адаптивная формула для line-height в Rem
+$maxWidth: 1440;
+@mixin adaptiv-lineHeight($min: 16, $maxF: 20, $minWidth: 320) {
+  $minF: $min / 16;
+  line-height: calc(
+    #{$minF + rem} + (#{$maxF} - #{$minF * 16}) * ((100vw - #{$minWidth + px}) /
+          (#{$maxWidth} - #{$minWidth}))
+  );
+}
+
+// Адаптивная формула для ширины блоков в Px
+@mixin adaptiv-block($min: 16, $maxF: 20, $maxWidth: 1440, $minWidth: 320) {
+  width: calc(
+    #{$min + px} + (#{$maxF} - #{$min}) * ((100vw - #{$minWidth + px}) /
+          (#{$maxWidth} - #{$minWidth}))
+  );
+}
+
+// Адаптивная формула для calc в px
+@function adaptiv-number($min: 16, $maxF: 20, $maxWidth: 1440, $minWidth: 320) {
+  $result: calc(
+    #{$min + px} + (#{$maxF} - #{$min}) * ((100vw - #{$minWidth + px}) /
+          (#{$maxWidth} - #{$minWidth}))
+  );
+  @return $result;
+}
+
+// img
+@mixin img($type: contain) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: $type;
+}
+
+// Адаптивная формула для текста в Rem
+@function adaptiv-num-rem(
+  $min: 16,
+  $maxF: 20,
+  $maxWidth: 1440,
+  $minWidth: 320
+) {
+  $minF: $min / 16;
+  $result: calc(
+    #{$minF + rem} + (#{$maxF} - #{$minF * 16}) * ((100vw - #{$minWidth + px}) /
+          (#{$maxWidth} - #{$minWidth}))
+  );
+  @return $result;
+}
+
+// mixin
+
+.header {
+  position: relative;
+  z-index: 1000;
+
+  @media (max-width: 600px) {
+    .info {
+      display: none;
+    }
+  }
+}
+
+nav {
+  background: #000000;
+  flex: 1 1 auto;
+  padding: 0 rem(220) 0 0;
+  align-items: center;
+
+  @media (max-width: 1440px) {
+    padding: 0 adaptiv-num-rem(15, 220, 1440, 1000) 0 0;
+  }
+  @media (max-width: 1000px) {
+    padding: 0 rem(15) 0 0;
+  }
+}
+
+// кнопка меню
+.burger-btn {
+  margin-left: auto;
+  border: 2px solid #ffffff;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  z-index: 1000;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+
+  &:hover {
+    border-color: #e7c200;
+    span {
+      background: #e7c200;
+    }
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 18px;
+    background: #ffffff;
+    opacity: 1;
+    border-radius: 9px;
+    transform: rotate(0deg);
+    transition: 0.3s ease-in-out;
+    left: 50%;
+    margin-left: -9px;
+
+    &:nth-child(1) {
+      top: 6px;
+    }
+    &:nth-child(2) {
+      top: 12px;
+    }
+    &:nth-child(3) {
+      top: 18px;
+    }
+  }
+}
+
+// При добавлении класса active анимация для кнопки меню
+.burger-btn.active span:nth-child(1) {
+  background: #ffffff;
+}
+
+.burger-btn.active span:nth-child(2) {
+  background: #ffffff;
+}
+
+.burger-btn.active span:nth-child(3) {
+  background: #ffffff;
+}
+
+.burger-btn.active {
+  border-color: #ffffff;
+}

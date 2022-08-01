@@ -1,0 +1,432 @@
+@use "sass:math";
+
+// mixin
+//Percent
+// @function percent($px, $from) {
+//   $result: math.div($px, $from) * 100%;
+//   @return $result;
+// }
+
+//REM
+@function rem($px) {
+  $result: ($px / 16) + rem;
+  @return $result;
+}
+
+//EM
+// @function em($px, $current: 16) {
+//   $result: math.div($px, $current) + em;
+//   @return $result;
+// }
+
+// Grids
+@mixin grid($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
+}
+
+// Адаптивная формула для текста в Rem
+$maxWidth: 1440;
+@mixin adaptiv-font($min: 16, $maxF: 20, $minWidth: 320) {
+  $minF: $min / 16;
+  font-size: calc(
+    #{$minF + rem} + (#{$maxF} - #{$minF * 16}) * ((100vw - #{$minWidth + px}) /
+          (#{$maxWidth} - #{$minWidth}))
+  );
+}
+
+// Адаптивная формула для line-height в Rem
+$maxWidth: 1440;
+@mixin adaptiv-lineHeight($min: 16, $maxF: 20, $minWidth: 320) {
+  $minF: $min / 16;
+  line-height: calc(
+    #{$minF + rem} + (#{$maxF} - #{$minF * 16}) * ((100vw - #{$minWidth + px}) /
+          (#{$maxWidth} - #{$minWidth}))
+  );
+}
+
+// Адаптивная формула для ширины блоков в Px
+@mixin adaptiv-block($min: 16, $maxF: 20, $maxWidth: 1440, $minWidth: 320) {
+  width: calc(
+    #{$min + px} + (#{$maxF} - #{$min}) * ((100vw - #{$minWidth + px}) /
+          (#{$maxWidth} - #{$minWidth}))
+  );
+}
+
+// Адаптивная формула для calc в px
+@function adaptiv-number($min: 16, $maxF: 20, $maxWidth: 1440, $minWidth: 320) {
+  $result: calc(
+    #{$min + px} + (#{$maxF} - #{$min}) * ((100vw - #{$minWidth + px}) /
+          (#{$maxWidth} - #{$minWidth}))
+  );
+  @return $result;
+}
+
+// img
+@mixin img($type: contain) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: $type;
+}
+
+// Адаптивная формула для текста в Rem
+@function adaptiv-num-rem(
+  $min: 16,
+  $maxF: 20,
+  $maxWidth: 1440,
+  $minWidth: 320
+) {
+  $minF: $min / 16;
+  $result: calc(
+    #{$minF + rem} + (#{$maxF} - #{$minF * 16}) * ((100vw - #{$minWidth + px}) /
+          (#{$maxWidth} - #{$minWidth}))
+  );
+  @return $result;
+}
+
+// mixin
+
+.section__start {
+  padding: rem(90) 0 rem(55) 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../../public/img/backgroud/start-back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1,
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-style: normal;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-family: "Montserrat Alternates";
+    font-weight: 600;
+    font-size: rem(48);
+    line-height: rem(59);
+    max-width: rem(715);
+    padding-bottom: rem(25);
+
+    @media (max-width: 1280px) {
+      font-size: adaptiv-num-rem(20, 48, 1280, 320);
+      line-height: adaptiv-num-rem(30, 59, 1280, 320);
+    }
+  }
+
+  h2 {
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: rem(24);
+    line-height: rem(29);
+    max-width: rem(680);
+
+    @media (max-width: 1280px) {
+      font-size: adaptiv-num-rem(14, 24, 1280, 320);
+      line-height: adaptiv-num-rem(19, 29, 1280, 320);
+    }
+  }
+}
+
+.start__plus {
+  justify-content: center;
+  padding: rem(75) 0 rem(75) 0;
+  gap: rem(65);
+}
+
+.plus__img {
+  max-width: 100px;
+  max-height: 100px;
+
+  background: #e7c200;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  padding: 18px;
+
+  svg {
+    max-width: 64px;
+    max-height: 64px;
+    object-fit: contain;
+
+    fill: #000000;
+  }
+}
+
+.plus__block {
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font-weight: 600;
+    font-size: rem(16);
+    line-height: rem(20);
+    text-align: center;
+    text-transform: uppercase;
+    color: #e7c200;
+    margin-top: rem(15);
+  }
+
+  &:nth-child(1) {
+    .plus__img {
+      svg {
+        width: 100%;
+        max-height: 64px;
+        object-fit: contain;
+
+        fill: none;
+        stroke: #000000;
+      }
+    }
+  }
+}
+
+.start__btn-wrapper {
+  justify-content: center;
+}
+
+.start__btn {
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: rem(20);
+  text-transform: uppercase;
+  color: #000000;
+
+  background: #e7c200;
+  border: 4px solid #82700e;
+  border-radius: 8px;
+  padding: rem(22) rem(84);
+}
+
+.section__about {
+  padding: rem(75) 0;
+}
+
+.about__text {
+  max-width: rem(400);
+
+  p {
+    margin-top: rem(75);
+    font-weight: 400;
+    font-size: rem(18);
+    line-height: rem(22);
+    color: #000000;
+    max-width: rem(392);
+  }
+}
+
+.about__img {
+  max-width: 490px;
+  max-height: 426px;
+  margin-left: auto;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.section__request {
+  background: #17222d;
+  padding: rem(75) 0;
+}
+
+.form-main {
+  margin-top: rem(40);
+  gap: rem(30);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(200), 1fr));
+}
+
+.request__text {
+  h3,
+  span {
+    color: #ffffff;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: rem(20);
+    line-height: rem(24);
+    text-transform: uppercase;
+  }
+  span {
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: rem(20);
+  }
+}
+
+.feedback__input {
+  padding: rem(15);
+  background: #ffffff;
+  border: rem(2) solid #8b9096;
+  border-radius: rem(8);
+  -webkit-border-radius: rem(8);
+  -moz-border-radius: rem(8);
+  -ms-border-radius: rem(8);
+  -o-border-radius: rem(8);
+
+  font-weight: 400;
+  font-size: rem(16);
+  line-height: rem(20);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.feedback__submit {
+  background: #e7c200;
+  border: 2px solid #7f7216;
+
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.section__work {
+  padding: rem(75) 0;
+  background: #e7c200;
+}
+
+.work-flex {
+  gap: rem(60);
+  margin: rem(80) 0 rem(85) 0;
+  justify-content: center;
+}
+
+.work__card {
+  width: rem(280);
+  height: rem(280);
+  flex: 0 0 auto;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    max-width: rem(225);
+    text-align: center;
+  }
+
+  &:nth-child(n + 0) {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+
+    & > span {
+      &::before {
+        content: "";
+        display: block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 64px;
+        height: 64px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &:nth-child(1) {
+    background: rgba(255, 255, 255, 0.1);
+
+    & > span {
+      &::before {
+        background-image: url(../../public/img/icon/call.svg);
+      }
+    }
+  }
+  &:nth-child(2) {
+    background: rgba(255, 255, 255, 0.2);
+
+    & > span {
+      &::before {
+        background-image: url(../../public/img/icon/truck.svg);
+      }
+    }
+  }
+  &:nth-child(3) {
+    background: rgba(255, 255, 255, 0.3);
+
+    & > span {
+      &::before {
+        background-image: url(../../public/img/icon/ruble.svg);
+      }
+    }
+  }
+}
+
+.documents {
+  font-weight: 600;
+  font-size: rem(16);
+  line-height: rem(20);
+  text-transform: uppercase;
+  color: #000000;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    content: "";
+    background-image: url(../../public/img/icon/documents.svg);
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 64px;
+    height: 64px;
+    margin-left: rem(10);
+  }
+}
+
+.work-grid {
+  margin-top: rem(75);
+  gap: rem(40);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(200), 1fr));
+}
+
+.work__text {
+  p {
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: rem(20);
+    color: #000000;
+  }
+}
+
+.section__feedback {
+  padding: rem(75) 0 rem(140) 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../../public/img/backgroud/feedback-back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.feedback-top {
+  h2,
+  h6 {
+    color: #ffffff;
+    text-align: center;
+  }
+
+  h6 {
+    padding: rem(45) 0 rem(75) 0;
+    font-weight: 400;
+    font-size: rem(20);
+    line-height: rem(24);
+  }
+}
+
+.feedback__form {
+  max-width: rem(680);
+  margin: 0 auto;
+  gap: rem(40);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(280), 1fr));
+}
