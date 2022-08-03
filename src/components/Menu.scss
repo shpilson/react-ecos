@@ -119,10 +119,8 @@ $maxWidth: 1440;
 .blur {
   width: 100vw;
   height: 100vh;
-  filter: blur(2px);
   backdrop-filter: blur(2px);
   position: absolute;
-  -webkit-filter: blur(2px);
   background: rgba(0, 0, 0, 0.8);
   position: absolute;
   z-index: 0;

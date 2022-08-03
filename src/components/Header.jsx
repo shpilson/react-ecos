@@ -11,9 +11,11 @@ const Header = () => {
 
   const items = [
     { value: "Главная", href: "/" },
-    // { value: "Услуги и цены", href: "/services" },
-    // { value: "Отзывы клиентов", href: "/feedback" },
-    // { value: "Познавательные материалы", href: "/blog" },
+    { value: "Прибыль с масла", href: "/profit" },
+    { value: "Вред отработанного масла", href: "/used" },
+    { value: "Утилизация масла", href: "/processing" },
+    { value: "Калькулятор прибыли", href: "/calc" },
+    { value: "Правила хранения масла", href: "/rules" },
   ];
 
   return (
