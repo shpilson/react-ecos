@@ -91,19 +91,61 @@ const Usedpage = () => {
       </section>
 
       <Modal active={modalActive} setActive={setModalActive}>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-          possimus distinctio, ut eveniet adipisci, accusamus aliquid dicta id
-          impedit et rerum dolores. Nihil porro beatae dignissimos tempore
-          repellendus, magnam saepe. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Minus possimus distinctio, ut eveniet adipisci,
-          accusamus aliquid dicta id impedit et rerum dolores. Nihil porro
-          beatae dignissimos tempore repellendus, magnam saepe. Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Minus possimus
-          distinctio, ut eveniet adipisci, accusamus aliquid dicta id impedit et
-          rerum dolores. Nihil porro beatae dignissimos tempore repellendus,
-          magnam saepe.
-        </p>
+        <div className="d-fl-col">
+          <div className="modal-top">
+            <h2 className="title__block">Экология сервис</h2>
+            <h6>
+              Оставьте заявку на вывоз отработанного масла и наш специалист
+              свяжется с Вами в ближайшее время
+            </h6>
+          </div>
+
+          <form action="">
+            <div className="modal-main">
+              <input
+                type="text"
+                name="name-modal"
+                id="name-modal"
+                placeholder="Ваше имя"
+                class="feedback__name feedback__input"
+              />
+              <input
+                type="text"
+                name="city-modal"
+                id="city-modal"
+                placeholder="Ваш город"
+                class="feedback__city feedback__input"
+              />
+              <input
+                type="text"
+                name="phone-modal"
+                id="phone-modal"
+                placeholder="Ваш телефон"
+                class="feedback__phone feedback__input"
+              />
+              <input
+                type="text"
+                name="address-modal"
+                id="address-modal"
+                placeholder="Точный адрес"
+                class="feedback__address feedback__input"
+              />
+              <input
+                type="text"
+                name="volume-modal"
+                id="volume-modal"
+                placeholder="Объём"
+                class="feedback__volume feedback__input"
+              />
+              <input
+                type="submit"
+                id="button-modal"
+                value="Отправить"
+                class="feedback__submit feedback__input"
+              />
+            </div>
+          </form>
+        </div>
       </Modal>
     </main>
   );
