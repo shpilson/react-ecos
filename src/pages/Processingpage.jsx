@@ -1,6 +1,10 @@
+import Modal from "../components/Modal";
+import { useState } from "react";
+
 import "./Morepage.scss";
 
 const Processingpage = () => {
+  const [modalActive, setModalActive] = useState(false);
   return (
     <main className="main">
       <section className="pages__section">
@@ -69,9 +73,12 @@ const Processingpage = () => {
                 "Экология Сервис" – гарант безопасной утилизации отработанных
                 масел
               </h3>
-              <a className="btn pages__btn" href="/">
+              <button
+                className="btn pages__btn"
+                onClick={() => setModalActive(true)}
+              >
                 Заказать
-              </a>
+              </button>
               <a className="pages__email" href="/">
                 ecos172@yandex.ru
               </a>
@@ -83,6 +90,21 @@ const Processingpage = () => {
           </article>
         </div>
       </section>
+      <Modal active={modalActive} setActive={setModalActive}>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+          possimus distinctio, ut eveniet adipisci, accusamus aliquid dicta id
+          impedit et rerum dolores. Nihil porro beatae dignissimos tempore
+          repellendus, magnam saepe. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Minus possimus distinctio, ut eveniet adipisci,
+          accusamus aliquid dicta id impedit et rerum dolores. Nihil porro
+          beatae dignissimos tempore repellendus, magnam saepe. Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Minus possimus
+          distinctio, ut eveniet adipisci, accusamus aliquid dicta id impedit et
+          rerum dolores. Nihil porro beatae dignissimos tempore repellendus,
+          magnam saepe.
+        </p>
+      </Modal>
     </main>
   );
 };

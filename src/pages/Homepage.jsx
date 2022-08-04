@@ -1,6 +1,10 @@
+import Modal from "../components/Modal";
+import { useState } from "react";
+
 import "./Homepage.scss";
 
 const Homepage = () => {
+  const [modalActive, setModalActive] = useState(false);
   return (
     <main className="main">
       <section className="section__start">
@@ -37,9 +41,12 @@ const Homepage = () => {
         </div>
 
         <div className="start__btn-wrapper d-fl">
-          <a className="btn start__btn" href="/">
+          <button
+            className="btn start__btn"
+            onClick={() => setModalActive(true)}
+          >
             Продать масло
-          </a>
+          </button>
         </div>
       </section>
       <section className="section__about">
@@ -203,6 +210,22 @@ const Homepage = () => {
           </form>
         </div>
       </section>
+
+      <Modal active={modalActive} setActive={setModalActive}>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+          possimus distinctio, ut eveniet adipisci, accusamus aliquid dicta id
+          impedit et rerum dolores. Nihil porro beatae dignissimos tempore
+          repellendus, magnam saepe. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Minus possimus distinctio, ut eveniet adipisci,
+          accusamus aliquid dicta id impedit et rerum dolores. Nihil porro
+          beatae dignissimos tempore repellendus, magnam saepe. Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Minus possimus
+          distinctio, ut eveniet adipisci, accusamus aliquid dicta id impedit et
+          rerum dolores. Nihil porro beatae dignissimos tempore repellendus,
+          magnam saepe.
+        </p>
+      </Modal>
     </main>
   );
 };
