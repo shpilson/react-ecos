@@ -112,10 +112,10 @@ const Homepage = () => {
               <span>Вы оставляете заявку на сайте или по телефону</span>
             </div>
             <div className="work__card d-fl">
-              <span>Вы оставляете заявку на сайте или по телефону</span>
+              <span>Мы приезжаем и откачиваем отработанное масло</span>
             </div>
             <div className="work__card d-fl">
-              <span>Вы оставляете заявку на сайте или по телефону</span>
+              <span>Оплачиваем удобным Вам способом</span>
             </div>
           </div>
           <div className="d-fl-col">

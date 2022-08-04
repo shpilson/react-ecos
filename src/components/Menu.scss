@@ -135,9 +135,40 @@ $maxWidth: 1440;
   z-index: 1;
   padding: rem(50) rem(30);
 
-  .logo {
-    @media (max-width: 400px) {
-      width: adaptiv-num-rem(175, 191, 400, 320);
+  .logo__main {
+    flex: 0 1 auto;
+    padding: 0px;
+
+    @media (max-width: 1280px) {
+      padding-top: adaptiv-num-rem(30, 0, 1280, 320);
+    }
+
+    .logo {
+      @media (max-width: 1280px) {
+        width: adaptiv-num-rem(27, 79, 1280, 320);
+        height: adaptiv-num-rem(41, 121, 1280, 320);
+      }
+
+      svg {
+        width: adaptiv-num-rem(27, 79, 1280, 320);
+        height: adaptiv-num-rem(41, 121, 1280, 320);
+      }
+    }
+
+    .logo__text {
+      h2 {
+        @media (max-width: 1280px) {
+          font-size: adaptiv-num-rem(12, 20, 1280, 320);
+          line-height: adaptiv-num-rem(16, 24, 1280, 320);
+        }
+      }
+
+      p {
+        @media (max-width: 1280px) {
+          font-size: adaptiv-num-rem(10, 14, 1280, 320);
+          line-height: adaptiv-num-rem(12, 17, 1280, 320);
+        }
+      }
     }
   }
 
@@ -182,6 +213,41 @@ $maxWidth: 1440;
           opacity: 0.8;
           text-decoration: underline;
         }
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: rem(32);
+        height: rem(32);
+        margin-right: rem(10);
+        flex-shrink: 0;
+
+        @media (max-width: 1280px) {
+          width: adaptiv-num-rem(22, 32, 1280, 320);
+          height: adaptiv-num-rem(22, 32, 1280, 320);
+        }
+      }
+
+      &:nth-child(1)::before {
+        background-image: url(../../public/img/icon/main.svg);
+      }
+      &:nth-child(2)::before {
+        background-image: url(../../public/img/icon/price.svg);
+      }
+      &:nth-child(3)::before {
+        background-image: url(../../public/img/icon/radiation.svg);
+      }
+      &:nth-child(4)::before {
+        background-image: url(../../public/img/icon/disposal.svg);
+      }
+      &:nth-child(5)::before {
+        background-image: url(../../public/img/icon/calc.svg);
+      }
+      &:nth-child(6)::before {
+        background-image: url(../../public/img/icon/checklist.svg);
       }
     }
   }

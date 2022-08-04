@@ -14,11 +14,25 @@ const Menu = ({ items, active, setActive }) => {
         className="menu__content d-fl-col"
         // onClick={(e) => e.stopPropagation()}
       >
-        <Link to="/">
-          <div className="logo">
-            <img src="/img/icon/logo.svg" alt="Екатерина Славная" />
-          </div>
-        </Link>
+        <div className="logo__main d-fl">
+          <Link to="/" className="d-fl">
+            <div className="logo">
+              <svg>
+                <use xlinkHref="/sprite.svg#logo"></use>
+              </svg>
+            </div>
+            <div className="logo__text d-fl-col">
+              <h2>экология сервис</h2>
+              <p>
+                покупка и утилизация
+                <br />
+                отработанного
+                <br />
+                масла
+              </p>
+            </div>
+          </Link>
+        </div>
         <ul className="d-fl-col">
           {items.map((item) => (
             <li>

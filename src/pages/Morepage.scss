@@ -90,6 +90,8 @@ $maxWidth: 1440;
 
 // mixin
 
+@import url("https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap");
+
 .pages__section {
 }
 
@@ -104,6 +106,7 @@ $maxWidth: 1440;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-position: center top;
 }
 
 .processing__background {
@@ -116,23 +119,25 @@ $maxWidth: 1440;
 
 .used__background {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../../public/img/backgroud/start-back.png);
+    url(../../public/img/backgroud/13.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-position: center -200px;
 }
 
 .calc__background {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../../public/img/backgroud/feedback-back.png);
+    url(../../public/img/backgroud/11.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-position: center -200px;
 }
 
 .rules__background {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(../../public/img/backgroud/7.jpg);
+    url(../../public/img/backgroud/10.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -144,34 +149,54 @@ $maxWidth: 1440;
   padding: rem(50) 0;
 
   h1 {
-    font-family: "Montserrat Alternates";
+    font-family: "Tinos", serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 40px;
     line-height: 46px;
     text-transform: uppercase;
     color: #000000;
+    letter-spacing: 1.5px;
+    @media (max-width: 1280px) {
+      font-size: adaptiv-num-rem(20, 40, 1280, 320);
+      line-height: adaptiv-num-rem(26, 46, 1280, 320);
+    }
 
     span {
       color: #f4cd00;
+      font-family: "Tinos", serif;
+      letter-spacing: 1.5px;
     }
   }
 
   p {
+    font-family: "Tinos", serif;
+    letter-spacing: 0.5px;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
     color: #000000;
+    @media (max-width: 1280px) {
+      font-size: adaptiv-num-rem(14, 18, 1280, 320);
+      line-height: adaptiv-num-rem(18, 22, 1280, 320);
+    }
   }
 }
 
 .title-top {
   justify-content: space-between;
   span {
+    font-family: "Tinos", serif;
+    letter-spacing: 0.5px;
     font-weight: 400;
     font-size: rem(12);
     line-height: rem(20);
     color: #9c9c9c;
+
+    @media (max-width: 1280px) {
+      font-size: adaptiv-num-rem(10, 12, 1280, 320);
+      line-height: adaptiv-num-rem(18, 20, 1280, 320);
+    }
   }
 }
 
@@ -183,24 +208,33 @@ $maxWidth: 1440;
 .content-center {
   position: relative;
   h3 {
-    font-family: "Montserrat Alternates";
+    font-family: "Tinos", serif;
+    letter-spacing: 0.5px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 30px;
     line-height: 36px;
     text-transform: uppercase;
     color: #f4cd00;
     text-align: center;
+
+    @media (max-width: 1280px) {
+      font-size: adaptiv-num-rem(18, 30, 1280, 320);
+      line-height: adaptiv-num-rem(24, 36, 1280, 320);
+    }
   }
   a {
+    font-family: "Tinos", serif;
+    letter-spacing: 0.5px;
     display: block;
     align-self: center;
   }
 }
 
 .pages__btn {
-  background-color: #000000;
-  color: #ffffff;
+  font-family: "Tinos", serif;
+  letter-spacing: 0.5px;
+  font-weight: 700;
   padding: rem(5) rem(10);
   border-radius: rem(8);
   -webkit-border-radius: rem(8);
@@ -210,11 +244,31 @@ $maxWidth: 1440;
   text-transform: uppercase;
   font-size: 20px;
   line-height: 26px;
-  font-weight: 500;
   margin: rem(40) 0 rem(15);
+  letter-spacing: 1.5px;
+  background-color: #161616;
+  color: #ffffff;
+  opacity: 0.9;
+
+  @media (max-width: 1280px) {
+    font-size: adaptiv-num-rem(18, 20, 1280, 320);
+    line-height: adaptiv-num-rem(24, 26, 1280, 320);
+  }
+
+  &:hover {
+    background-color: #000000;
+    opacity: 1;
+  }
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
 
 .pages__email {
+  font-family: "Tinos", serif;
+  letter-spacing: 0.5px;
   font-weight: 400;
   font-size: rem(12);
   line-height: rem(20);
@@ -257,4 +311,48 @@ $maxWidth: 1440;
 
 #circle {
   fill: none;
+}
+
+.content-center--list {
+  padding: rem(75) 0;
+}
+
+.content__list {
+  ul {
+    li {
+      span {
+        display: block;
+        font-size: 22px;
+        line-height: 28px;
+        padding-bottom: rem(5);
+        font-weight: 600;
+        font-family: "Tinos", serif;
+        letter-spacing: 0.5px;
+
+        @media (max-width: 1280px) {
+          font-size: adaptiv-num-rem(18, 22, 1280, 320);
+          line-height: adaptiv-num-rem(22, 28, 1280, 320);
+        }
+      }
+    }
+  }
+  li {
+    padding: rem(5) 0;
+    font-size: 18px;
+    line-height: 22px;
+    font-family: "Tinos", serif;
+    letter-spacing: 0.5px;
+
+    @media (max-width: 1280px) {
+      font-size: adaptiv-num-rem(14, 18, 1280, 320);
+      line-height: adaptiv-num-rem(18, 22, 1280, 320);
+    }
+  }
+}
+
+.content-list--type {
+  li {
+    margin-left: rem(15);
+    list-style-type: disc;
+  }
 }

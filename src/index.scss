@@ -100,10 +100,11 @@
 }
 
 .logo__text {
-  padding-left: rem(30);
+  padding: 0 rem(30) 0 rem(30);
 
   @media (max-width: 1280px) {
-    padding-left: adaptiv-num-rem(10, 30, 1280, 320);
+    padding: 0 adaptiv-num-rem(10, 30, 1280, 320) 0
+      adaptiv-num-rem(10, 30, 1280, 320);
   }
 
   h2,
@@ -118,8 +119,8 @@
     padding-bottom: rem(5);
 
     @media (max-width: 1280px) {
-      font-size: adaptiv-num-rem(12, 20, 1280, 320);
-      line-height: adaptiv-num-rem(16, 24, 1280, 320);
+      font-size: adaptiv-num-rem(14, 20, 1280, 320);
+      line-height: adaptiv-num-rem(18, 24, 1280, 320);
     }
   }
 
@@ -222,7 +223,6 @@
 }
 
 .title__block {
-  font-family: "Montserrat Alternates";
   font-style: normal;
   font-weight: 500;
   font-size: rem(32);

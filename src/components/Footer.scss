@@ -98,6 +98,32 @@ $maxWidth: 1440;
   .d-fl {
     .logo__main {
       flex: 1 1 rem(280.5);
+
+      .logo {
+        min-width: 27px;
+        min-height: 41px;
+
+        svg {
+          min-width: 27px;
+          min-height: 41px;
+        }
+      }
+
+      .logo__text {
+        h2 {
+          @media (max-width: 1280px) {
+            font-size: adaptiv-num-rem(10, 20, 1280, 320);
+            line-height: adaptiv-num-rem(14, 24, 1280, 320);
+          }
+        }
+
+        p {
+          @media (max-width: 1280px) {
+            font-size: adaptiv-num-rem(8, 14, 1280, 320);
+            line-height: adaptiv-num-rem(10, 17, 1280, 320);
+          }
+        }
+      }
     }
 
     .info {
@@ -110,7 +136,7 @@ $maxWidth: 1440;
         padding: 0 adaptiv-num-rem(15, 220, 1440, 1000) 0 0;
       }
       @media (max-width: 1000px) {
-        padding: 0 rem(15) 0 0;
+        padding: 0 adaptiv-num-rem(0, 15, 1000, 320) 0 0;
       }
     }
   }
