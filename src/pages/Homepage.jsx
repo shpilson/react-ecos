@@ -71,7 +71,7 @@ const Homepage = () => {
             <div className="section__block">
               <div className="about__img">
                 <img
-                  src="/img/photo/about.png"
+                  src="/img/photo/about.webp"
                   alt="покупка и утилизация отработанного масла"
                 />
               </div>
