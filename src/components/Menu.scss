@@ -127,7 +127,7 @@ $maxWidth: 1440;
 }
 
 .menu__content {
-  width: rem(600);
+  width: rem(650);
   height: 100%;
   background-color: #e7c200;
   position: absolute;
@@ -173,11 +173,11 @@ $maxWidth: 1440;
   }
 
   @media (min-width: 1440px) {
-    width: 40%;
+    width: 45%;
   }
 
   @media (max-width: 1280px) {
-    width: adaptiv-num-rem(250, 600, 1280, 320);
+    width: adaptiv-num-rem(250, 650, 1280, 320);
     padding: rem(50) adaptiv-num-rem(15, 30, 1280, 320);
   }
 
