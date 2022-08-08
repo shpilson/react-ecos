@@ -2,6 +2,7 @@ import Modal from "../components/Modal";
 import { useState } from "react";
 
 import "./Morepage.scss";
+import ContactUsModal from "../components/ContactUsModal";
 
 const Rulespage = () => {
   const [modalActive, setModalActive] = useState(false);
@@ -302,51 +303,9 @@ const Rulespage = () => {
             </h6>
           </div>
 
-          <form action="">
-            <div className="modal-main">
-              <input
-                type="text"
-                name="name-modal"
-                id="name-modal"
-                placeholder="Ваше имя"
-                class="feedback__name feedback__input"
-              />
-              <input
-                type="text"
-                name="city-modal"
-                id="city-modal"
-                placeholder="Ваш город"
-                class="feedback__city feedback__input"
-              />
-              <input
-                type="text"
-                name="phone-modal"
-                id="phone-modal"
-                placeholder="Ваш телефон"
-                class="feedback__phone feedback__input"
-              />
-              <input
-                type="text"
-                name="address-modal"
-                id="address-modal"
-                placeholder="Точный адрес"
-                class="feedback__address feedback__input"
-              />
-              <input
-                type="text"
-                name="volume-modal"
-                id="volume-modal"
-                placeholder="Объём"
-                class="feedback__volume feedback__input"
-              />
-              <input
-                type="submit"
-                id="button-modal"
-                value="Отправить"
-                class="feedback__submit feedback__input"
-              />
-            </div>
-          </form>
+          <ContactUsModal>
+
+          </ContactUsModal>
         </div>
       </Modal>
     </main>
