@@ -2,6 +2,7 @@ import Modal from "../components/Modal";
 import { useState } from "react";
 import ContactUs from "../components/ContactUs";
 import ContactUsModal from "../components/ContactUsModal";
+import ContactUsSmall from "../components/ContactUsSmall";
 
 import "./Homepage.scss";
 
@@ -88,30 +89,9 @@ const Homepage = () => {
             <h3>Оставьте заявку на вывоз отработанного масла</h3>
             <span>Наш специалист свяжется с вами в течение 5 минут</span>
           </div>
-          <form action="">
-            <div className="form-main">
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Ваше имя"
-                class="feedback__name feedback__input"
-              />
-              <input
-                type="text"
-                name="phone"
-                id="phone"
-                placeholder="Ваш телефон"
-                class="feedback__phone feedback__input"
-              />
-              <input
-                type="submit"
-                id="button"
-                value="Отправить"
-                class="feedback__submit feedback__input"
-              />
-            </div>
-          </form>
+          <ContactUsSmall>
+
+          </ContactUsSmall>
         </div>
       </section>
       <section className="section__work">
