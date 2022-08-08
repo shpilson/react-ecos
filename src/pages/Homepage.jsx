@@ -1,7 +1,11 @@
 import Modal from "../components/Modal";
 import { useState } from "react";
+import ContactUs from "../components/ContactUs";
+import ContactUsModal from "../components/ContactUsModal";
+import ContactUsSmall from "../components/ContactUsSmall";
 
 import "./Homepage.scss";
+
 
 const Homepage = () => {
   const [modalActive, setModalActive] = useState(false);
@@ -85,30 +89,9 @@ const Homepage = () => {
             <h3>Оставьте заявку на вывоз отработанного масла</h3>
             <span>Наш специалист свяжется с вами в течение 5 минут</span>
           </div>
-          <form action="">
-            <div className="form-main">
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Ваше имя"
-                class="feedback__name feedback__input"
-              />
-              <input
-                type="text"
-                name="phone"
-                id="phone"
-                placeholder="Ваш телефон"
-                class="feedback__phone feedback__input"
-              />
-              <input
-                type="submit"
-                id="button"
-                value="Отправить"
-                class="feedback__submit feedback__input"
-              />
-            </div>
-          </form>
+          <ContactUsSmall>
+
+          </ContactUsSmall>
         </div>
       </section>
       <section className="section__work">
@@ -162,52 +145,10 @@ const Homepage = () => {
               свяжется с Вами в ближайшее время
             </h6>
           </div>
+          <ContactUs>
 
-          <form action="">
-            <div className="feedback__form">
-              <input
-                type="text"
-                name="name2"
-                id="name2"
-                placeholder="Ваше имя"
-                class="feedback__name feedback__input"
-              />
-              <input
-                type="text"
-                name="city"
-                id="city"
-                placeholder="Ваш город"
-                class="feedback__city feedback__input"
-              />
-              <input
-                type="text"
-                name="phone2"
-                id="phone2"
-                placeholder="Ваш телефон"
-                class="feedback__phone feedback__input"
-              />
-              <input
-                type="text"
-                name="address"
-                id="address"
-                placeholder="Точный адрес"
-                class="feedback__address feedback__input"
-              />
-              <input
-                type="text"
-                name="volume"
-                id="volume"
-                placeholder="Объём"
-                class="feedback__volume feedback__input"
-              />
-              <input
-                type="submit"
-                id="button2"
-                value="Отправить"
-                class="feedback__submit feedback__input"
-              />
-            </div>
-          </form>
+          </ContactUs>
+
         </div>
       </section>
 
@@ -221,51 +162,9 @@ const Homepage = () => {
             </h6>
           </div>
 
-          <form action="">
-            <div className="modal-main">
-              <input
-                type="text"
-                name="name-modal"
-                id="name-modal"
-                placeholder="Ваше имя"
-                class="feedback__name feedback__input"
-              />
-              <input
-                type="text"
-                name="city-modal"
-                id="city-modal"
-                placeholder="Ваш город"
-                class="feedback__city feedback__input"
-              />
-              <input
-                type="text"
-                name="phone-modal"
-                id="phone-modal"
-                placeholder="Ваш телефон"
-                class="feedback__phone feedback__input"
-              />
-              <input
-                type="text"
-                name="address-modal"
-                id="address-modal"
-                placeholder="Точный адрес"
-                class="feedback__address feedback__input"
-              />
-              <input
-                type="text"
-                name="volume-modal"
-                id="volume-modal"
-                placeholder="Объём"
-                class="feedback__volume feedback__input"
-              />
-              <input
-                type="submit"
-                id="button-modal"
-                value="Отправить"
-                class="feedback__submit feedback__input"
-              />
-            </div>
-          </form>
+          <ContactUsModal>
+
+          </ContactUsModal>
         </div>
       </Modal>
     </main>
