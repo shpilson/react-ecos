@@ -54,17 +54,25 @@ const Usedpage = () => {
             </p>
             <div className="content-center d-fl-col">
               <div className="society d-fl-col">
-                <a href="/" className="society__block">
+                <a
+                  href="mailto:ecos172@yandex.ru"
+                  target="_blank"
+                  className="society__block"
+                >
                   <svg>
                     <use xlinkHref="/sprite.svg#mail-page"></use>
                   </svg>
                 </a>
-                <a href="/" className="society__block">
+                <a href="tel:+79526775003" className="society__block">
                   <svg>
                     <use xlinkHref="/sprite.svg#phone-page"></use>
                   </svg>
                 </a>
-                <a href="/" className="society__block">
+                <a
+                  href="https://m.vk.com/otrabotka72"
+                  target="_blank"
+                  className="society__block"
+                >
                   <svg>
                     <use xlinkHref="/sprite.svg#vk-page"></use>
                   </svg>
@@ -78,7 +86,11 @@ const Usedpage = () => {
               >
                 Заказать
               </button>
-              <a className="pages__email" href="/">
+              <a
+                className="pages__email"
+                href="mailto:ecos172@yandex.ru"
+                target="_blank"
+              >
                 ecos172@yandex.ru
               </a>
             </div>
@@ -101,9 +113,7 @@ const Usedpage = () => {
             </h6>
           </div>
 
-          <ContactUsModal>
-
-          </ContactUsModal>
+          <ContactUsModal></ContactUsModal>
         </div>
       </Modal>
     </main>
